@@ -6,6 +6,8 @@ Detect type of variable - string, integer, array, geolocation, float, repeatable
 ```js
 var detector = require('type-detection')
 
+// there is detectFieldType (single variable) and detectFieldsType (array of variables) 
+
 detector.detectFieldsType(['a', 'a,b,c,d', 'c'])
 // array
 

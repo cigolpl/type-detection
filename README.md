@@ -3,6 +3,7 @@ Detect type of variable - string, integer, array, geolocation, float, repeatable
 
 ## usage
 
+```js
 var detector = require('type-detection')
 
 detector.detectFieldsType(['a', 'a,b,c,d', 'c'])
@@ -25,7 +26,7 @@ detector.detectFieldType(false)
 
 detector.detectFieldType('06/22/2015')
 // date
-
+```
 
 
 ## installation

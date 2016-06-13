@@ -33,6 +33,8 @@ detector.detectFieldType('path/path.pdf')
 detector.detectFieldType(5.6)
 // float
 
+detector.detectFieldType('a,b,c,d')
+// array
 
 detector.detectFieldType(['Drama', 'Crime fiction'])
 // array

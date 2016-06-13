@@ -1,6 +1,6 @@
 {
   "name": "type-detection",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect type of variable - string, integer, array, geolocation, float, repeatable_string etc",
   "main": "index.js",
   "scripts": {

@@ -30,11 +30,23 @@ detector.detectFieldType('06/22/2015')
 detector.detectFieldType('path/path.jpg')
 // image
 
+detector.detectFieldType('path/path.pdf')
+// file
+
 detector.detectFieldType(5.6)
 // float
 
 detector.detectFieldType(['Drama', 'Crime fiction'])
 // array
+
+detector.detectFieldType('lorem ipsum lorem ipsum x 50')
+// text
+
+detector.detectFieldType('joe@domain.com')
+// email
+
+detector.detectFieldType('http://google.com')
+// url
 ```
 
 

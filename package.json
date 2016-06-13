@@ -1,0 +1,39 @@
+{
+  "name": "type-detection",
+  "version": "0.1.0",
+  "description": "Detect type of variable - string, integer, array, geolocation, float, repeatable_string etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cigolpl/type-detection.git"
+  },
+  "keywords": [
+    "variable",
+    "type",
+    "detect",
+    "integer",
+    "integer",
+    "variable",
+    "string",
+    "array",
+    "geolocation",
+    "number"
+  ],
+  "author": "Mateusz Rzepa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cigolpl/type-detection/issues"
+  },
+  "homepage": "https://github.com/cigolpl/type-detection#readme",
+  "dependencies": {
+    "faker": "^3.1.0",
+    "lodash": "^4.13.1",
+    "mailchecker": "^3.0.7",
+    "mocha": "^2.5.3",
+    "moment": "^2.13.0",
+    "should": "^9.0.2"
+  }
+}

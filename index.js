@@ -2,6 +2,8 @@
 var _ = require('lodash')
 var moment = require('moment')
 var mail = require('mailchecker');
+var urlRegex = require('url-regex');
+var ipRegex = require('ip-regex');
 
 var DATE_FORMATS = [
   moment.ISO_8601,
@@ -45,6 +47,10 @@ exports.detectFieldType = function(val) {
   } else if (moment(val, DATE_FORMATS, true).isValid()) {
     //http://stackoverflow.com/a/30870755/659682
     return 'date'
+  } else if (_.isString(val) && ipRegex({exact: true}).test(val)) {
+    return 'ip'
+  } else if (_.isString(val) && urlRegex({exact: true}).test(val)) {
+    return 'url'
   } else if (_.isString(val) && val.length >= 100) {
     return 'text'
   } else if (_.isString(val) && mail.isValid(val)) {
@@ -69,7 +75,8 @@ exports.detectFieldType = function(val) {
 exports.detectFieldsType = function(rows) {
   var val = _.head(rows)
 
-  if (_.isString(val)) {
+  //if (_.isString(val)) {
+  if (exports.detectFieldType(val) === 'string') {
     if (_.isArray(rows)) {
       // if value is too long then string (not array)
       for (var i = 0 ; i < rows.length ; ++i) {

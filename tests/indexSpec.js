@@ -33,6 +33,15 @@ describe('configuration', function() {
     var type = helper.detectFieldType('email@domain.com');
     type.should.be.equal('email')
 
+    var type = helper.detectFieldType('http://google.com');
+    type.should.be.equal('url')
+
+    var type = helper.detectFieldType('www.google.com');
+    type.should.be.equal('url')
+
+    var type = helper.detectFieldType('192.168.0.1');
+    type.should.be.equal('ip')
+
     done();
   });
 
@@ -49,8 +58,14 @@ describe('configuration', function() {
     var type = helper.detectFieldsType(['a', 'b', 'c', '', '', '']);
     type.should.be.equal('string')
 
+    var type = helper.detectFieldsType(['joe@domain.com', 'joe2@domain.com']);
+    type.should.be.equal('email')
+
     var type = helper.detectFieldsType(['81.36, 16.40']);
     type.should.be.equal('geo')
+
+    var type = helper.detectFieldsType(['192.168.0.1', '192.168.0.1']);
+    type.should.be.equal('ip')
 
     done()
   })

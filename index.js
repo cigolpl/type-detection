@@ -35,9 +35,9 @@ exports.detectFieldType = function(val) {
     return 'geo'
   } else if (_.isPlainObject(val) && val.latitude && val.longitude) {
     return 'geo'
-  } else if (_.isString(val) && val.match(/\.(jpg|png|gif|jpeg)/)) {
+  } else if (_.isString(val) && val.toLowerCase().match(/\.(jpg|png|gif|jpeg)/)) {
     return 'image'
-  } else if (_.isString(val) && val.match(/\.(pdf|doc|docx)/)) {
+  } else if (_.isString(val) && val.toLowerCase().match(/\.(pdf|doc|docx)/)) {
     return 'file'
   } else if (_.isNumber(val)) {
     //http://stackoverflow.com/a/1830844/659682
